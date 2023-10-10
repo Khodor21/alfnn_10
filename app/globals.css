@@ -2,26 +2,137 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
   }
 }
 
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("./fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSansArabic-SemiBold";
+  src: url("./fonts/IBMPlexSansArabic-SemiBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSansArabic-Bold";
+  src: url("./fonts/IBMPlexSansArabic-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Al-Jazeera-Arabic-Bold";
+  src: url("./fonts/Al-Jazeera-Arabic Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+footer {
+  font-family: "Poppins-Medium";
+}
+
+.bounce {
+  animation: bounce 1s infinite;
+}
+.rocket {
+  animation: rocket 1s infinite;
+}
+.astroman {
+  animation: astroman 1s infinite;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes wave {
+  100% {
+    background-position: 100px 0, 75px 0, 50px 0, 25px 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes rocket {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(30px);
+  }
+  60% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes astroman {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0px);
+  }
+  40% {
+    transform: translateX(15px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+}
+
+#topic {
+  font-family: "Al-Jazeera-Arabic-Bold";
+}
+
+#arabic {
+  font-family: "IBMPlexSansArabic-SemiBold";
+}
+#arabicBold {
+  font-family: "IBMPlexSansArabic-Bold";
+}
+#english {
+  font-family: "Poppins-Medium";
+}
+#englishBold {
+  font-family: "Poppins-Bold";
 }
