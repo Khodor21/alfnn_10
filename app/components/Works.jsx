@@ -44,9 +44,13 @@ export default class Works extends Component {
             />
           </div>
         </div>
-        <h1 className="text-center  text-xl text-third m-10" id="topic">
-          تصامــيم انستغرام
-        </h1>
+        <div className="text-center mt-4 mb-8">
+          <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+          <h1 className="inline-block px-2 text-xl text-third" id="topic">
+            تصامــيم انستغرام
+          </h1>
+          <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center my-8">
           <div className="">
@@ -78,9 +82,14 @@ export default class Works extends Component {
             </Slider>
           </div>
         </div>
-        <h1 className="text-center  text-xl text-third m-10" id="topic">
-          مونتــاج ودعــواتـ
-        </h1>
+        <div className="text-center mt-4 mb-8">
+          <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+          <h1 className="inline-block px-2 text-xl text-third" id="topic">
+            مونتــاج ودعــواتـ
+          </h1>
+          <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+        </div>
+
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mx-8 h-full">
           <video
             autoPlay

@@ -4,12 +4,10 @@ import React, { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { motion } from "framer-motion";
-import Logo from "./assets/Logo.png";
 import MainLogo from "./assets/MainLogo.png";
 import NavSide from "./NavSide";
 import Image from "next/image";
 import Link from "next/link";
-import { Main } from "next/document";
 
 const Navbar = () => {
   const topDataVariants = {
