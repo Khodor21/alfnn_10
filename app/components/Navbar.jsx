@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="pt-10 px-6 relative z-10 bg-second arabic">
+      <nav className="pt-10 pb-2 px-6 relative z-10 bg-second arabic">
         <motion.div
           initial="hidden"
           animate="visible"
