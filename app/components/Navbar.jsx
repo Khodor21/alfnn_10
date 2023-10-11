@@ -59,20 +59,17 @@ const Navbar = () => {
                 <Link href="/" className="hover:text-main">
                   الرئيسية
                 </Link>
-                <Link href="#booking" className="hover:text-main">
-                  حجز موعد
+                <Link href="#services" className="hover:text-main">
+                  خدماتي{" "}
                 </Link>{" "}
-                <Link href="#location" className="hover:text-main">
-                  موقعــنا{" "}
+                <Link href="#works" className="hover:text-main">
+                  أعمالي{" "}
                 </Link>
-                <Link href="#Team" className="hover:text-main">
-                  فريقنا
-                </Link>
-                <Link href="#footer" className="hover:text-main">
-                  تواصل معنا
+                <Link href="#contact" className="hover:text-main">
+                  تواصل معي
                 </Link>
                 <Link href="#testimonial" className="hover:text-main">
-                  آراء المراجعــين
+                  آراء العملاء
                 </Link>
               </div>
             </div>

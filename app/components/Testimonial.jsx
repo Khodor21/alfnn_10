@@ -28,7 +28,7 @@ const Testimonial = () => {
   const images = [TestimonialA, TestimonialB, TestimonialC];
 
   return (
-    <div className=" bg-main">
+    <div className=" bg-main" id="testimonial">
       <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-6 mx-8">
         <h1 className="text-center text-3xl text-second " id="topic">
           رســائل حُــبّ مِــن عُمــلاء فَــنّ فضــائي{" "}

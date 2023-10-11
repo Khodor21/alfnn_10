@@ -67,7 +67,7 @@ footer {
     transform: translate(0px, 0px);
   }
   100% {
-    transform: translate(100px, 0px);
+    transform: translate(100px, 100px);
   }
 }
 
@@ -77,15 +77,15 @@ footer {
 }
 @keyframes circlePlane {
   0% {
-    transform: translate(-20px, 0px);
+    transform: translate(-100px, 0px);
   }
   100% {
-    transform: translate(65px, 0px);
+    transform: translate(0px, 0px);
   }
 }
 
 .planet1 {
-  animation: circlePlane 3s infinite ease-in-out;
+  animation: circlePlane 4s infinite ease-in-out;
   animation-direction: alternate;
 }
 

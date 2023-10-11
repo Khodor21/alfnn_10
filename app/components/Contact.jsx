@@ -36,7 +36,7 @@ const Contact = () => {
   };
   //https://api.whatsapp.com/message/BFP3GRIKS2CNB1?autoload=1&app_absent=0
   return (
-    <div className="bg-third">
+    <div className="bg-third" id="contact">
       <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-6 mx-8">
         <h1 className="text-center text-3xl text-white" id="topic">
           : تواصــل معنا
