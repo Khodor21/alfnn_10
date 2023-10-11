@@ -87,7 +87,7 @@ const Contact = () => {
           id="topic"
           type="submit"
           onClick={submitForm}
-          className="rounded-md text-main bg-white w-[50%] text-center mx-auto mb-8"
+          className="rounded-md text-third bg-white w-[50%] text-center mx-auto mb-8"
         >
           تأكيد الـموعد
         </button>

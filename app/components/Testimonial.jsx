@@ -30,10 +30,10 @@ const Testimonial = () => {
   return (
     <div className=" bg-main">
       <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-6 mx-8">
-        <h1 className="text-center text-3xl text-third " id="topic">
+        <h1 className="text-center text-3xl text-second " id="topic">
           رســائل حُــبّ مِــن عُمــلاء فَــنّ فضــائي{" "}
         </h1>
-        <div className="relative rounded-full bg-third mt-6">
+        <div className="relative rounded-full bg-second mt-6">
           <Image
             src={worksImage}
             alt="worksImage"
@@ -48,20 +48,8 @@ const Testimonial = () => {
         >
           <BiSolidQuoteAltLeft />{" "}
         </p>
-        <div className="flex justify-center items-center">
-          {" "}
-          <Image
-            alt="Testimonial"
-            className="w-[25%] md:w-[15%] lg:w-[5%]"
-            src={MainLogo}
-          />
-          <Image
-            alt="Testimonial"
-            className="w-[25%] md:w-[15%] lg:w-[5%]"
-            src={TestLogo}
-          />
-        </div>
-        <div className="my-6 w-full card">
+
+        <div className=" w-full card">
           <Slider {...settings}>
             {images.map((image, index) => (
               <div key={index}>
@@ -75,6 +63,18 @@ const Testimonial = () => {
               </div>
             ))}
           </Slider>
+        </div>
+        <div className="flex justify-center items-center mt-6">
+          <Image
+            alt="Testimonial"
+            className="w-[25%] md:w-[15%] lg:w-[5%]"
+            src={MainLogo}
+          />
+          <Image
+            alt="Testimonial"
+            className="w-[25%] md:w-[15%] lg:w-[5%]"
+            src={TestLogo}
+          />
         </div>
       </div>
     </div>

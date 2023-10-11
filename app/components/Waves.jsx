@@ -2,7 +2,7 @@ import React from "react";
 import "../waves.css";
 const Waves = () => {
   return (
-    <div className="waveWrapper waveAnimation h-28">
+    <div className="waveWrapper waveAnimation h-60 md:h-28">
       <div className="waveWrapperInner bgTop">
         <div
           className="wave waveBottom"
