@@ -1,5 +1,6 @@
 import express from "express";
 import Message from "../models/Message.js";
+import Blog from "../models/Blog.js";
 const router = express.Router();
 
 router.post("/contact", async (req, res) => {

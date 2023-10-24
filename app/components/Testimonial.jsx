@@ -13,6 +13,7 @@ import TestLogo from "./assets/TestLogo.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Waves from "./FinalWaves";
 const Testimonial = () => {
   const settings = {
     dots: true,

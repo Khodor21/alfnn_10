@@ -9,6 +9,7 @@ import axios from "axios";
 import ContactIcon from "./assets/Contact.png";
 import Image from "next/image";
 import Link from "next/link";
+import Waves from "./FinalWaves";
 const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
@@ -36,7 +37,7 @@ const Contact = () => {
   };
   //https://api.whatsapp.com/message/BFP3GRIKS2CNB1?autoload=1&app_absent=0
   return (
-    <div className="bg-third" id="contact">
+    <div className="bg-second" id="contact">
       <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-6 mx-8">
         <h1 className="text-center text-3xl text-white" id="topic">
           : تواصــل معنا
@@ -54,7 +55,7 @@ const Contact = () => {
         id="arabicBold"
       >
         <input
-          className="placeholder:text-right text-third shadow appearance-none border-third rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="placeholder:text-right text-second shadow appearance-none border-second rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
           type="text"
           placeholder="اكتب اسمك هنا"
@@ -64,7 +65,7 @@ const Contact = () => {
           value={name}
         />
         <input
-          className="placeholder:text-right text-third shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="placeholder:text-right text-second shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="phone"
           type="tel"
           placeholder="رقمك إذا تحب أتواصل معك واتساب"
@@ -74,7 +75,7 @@ const Contact = () => {
           value={number}
         />
         <textarea
-          className="placeholder:text-right text-third shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="placeholder:text-right text-second shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="message"
           type="text"
           placeholder="رسالتــك هنــا"
@@ -87,35 +88,53 @@ const Contact = () => {
           id="topic"
           type="submit"
           onClick={submitForm}
-          className="rounded-md text-third bg-white w-[50%] text-center mx-auto mb-8"
+          className="rounded-md text-second bg-white w-[50%] text-center mx-auto mb-8"
         >
-          تأكيد الـموعد
+          إرسال
         </button>
         <ToastContainer />
       </form>
-      <div className="flex justify-center items-center gap-4 text-third text-2xl font-extrabold">
-        <Link href="instagram.com" className="bg-white rounded-full mb-2">
+      <div className="flex justify-center items-center gap-4 text-second text-2xl font-extrabold">
+        <Link
+          href="https://www.instagram.com/alfnn_10/"
+          className="bg-white rounded-full mb-2"
+        >
           <FiInstagram className="m-2" />
         </Link>
-        <Link href="instagram.com" className="bg-white rounded-full mb-2">
+        <Link
+          href="https://www.behance.net/alfnndesign?log_shim_removal=1"
+          className="bg-white rounded-full mb-2"
+        >
           <BsBehance className="m-2" />
         </Link>
-        <Link href="instagram.com" className="bg-white rounded-full mb-2">
+        <Link
+          href="https://api.whatsapp.com/message/BFP3GRIKS2CNB1?autoload=1&app_absent=0"
+          className="bg-white rounded-full mb-2"
+        >
           <BsWhatsapp className="m-2" />
         </Link>
-        <Link href="instagram.com" className="bg-white rounded-full mb-2">
+        <Link
+          href="https://twitter.com/Alfn_10"
+          className="bg-white rounded-full mb-2"
+        >
           <FaXTwitter className="m-2" />
         </Link>
-        <Link href="instagram.com" className="bg-white rounded-full mb-2">
+        <Link
+          href="https://www.youtube.com/channel/UCbN7yJqw1tPmiKUy-O2GycA"
+          className="bg-white rounded-full mb-2"
+        >
           <FiYoutube className="m-2" />
         </Link>
-        <Link href="instagram.com" className="bg-white rounded-full mb-2">
+        <Link
+          href="https://www.tiktok.com/@alfn_10"
+          className="bg-white rounded-full mb-2"
+        >
           <FaTiktok className="m-2" />
         </Link>
       </div>
+      <Waves />
     </div>
   );
 };
 
 export default Contact;
-//https://api.whatsapp.com/message/BFP3GRIKS2CNB1?autoload=1&app_absent=0

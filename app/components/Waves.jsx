@@ -34,3 +34,4 @@ const Waves = () => {
 };
 
 export default Waves;
+//https://firebasestorage.googleapis.com/v0/b/cloud-image-21153.appspot.com/o/wave-top.png?alt=media&token=64ac48a7-64b8-404d-97cb-1fe6433999b8&_gl=1*kmx3o*_ga*ODg4OTgwNDI0LjE2Nzk1Njk4ODQ.*_ga_CW55HF8NVT*MTY5NzAxOTUzMC4zNS4xLjE2OTcwMTk3MTIuNDcuMC4w

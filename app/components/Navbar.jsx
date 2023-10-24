@@ -55,7 +55,7 @@ const Navbar = () => {
               </button>
             </div>
             <div id="arabic" className="text-white">
-              <div className="lg:flex gap-14 hidden flex-row-reverse">
+              <div className="lg:flex gap-14 hidden text-lg flex-row-reverse">
                 <Link href="/" className="hover:text-main">
                   الرئيسية
                 </Link>

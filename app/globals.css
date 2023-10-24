@@ -75,17 +75,13 @@ footer {
   animation: circlePlanet 5s infinite ease-in-out;
   animation-direction: alternate;
 }
-@keyframes circlePlane {
-  0% {
-    transform: translate(-100px, 0px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
 
 .planet1 {
   animation: circlePlane 4s infinite ease-in-out;
+  animation-direction: alternate;
+}
+.moon {
+  animation: moon 7s infinite ease-in-out;
   animation-direction: alternate;
 }
 
@@ -98,6 +94,22 @@ body {
 @keyframes wave {
   100% {
     background-position: 100px 0, 75px 0, 50px 0, 25px 0;
+  }
+}
+@keyframes circlePlane {
+  0% {
+    transform: translate(-100px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes moon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
