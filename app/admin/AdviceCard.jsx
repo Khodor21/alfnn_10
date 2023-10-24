@@ -46,7 +46,7 @@ function Blog() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/blog",
+        "https://alfnn-backend.vercel.app/api/blog",
         formData
       );
       toast.success("شكرااا لك ! رسالتك صارت عندي");

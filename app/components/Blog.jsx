@@ -39,7 +39,9 @@ const Blog = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/blog");
+      const response = await axios.get(
+        "https://alfnn-backend.vercel.app/api/blog"
+      );
       setPosts(response.data);
       console.log(response.data);
       setIsLoading(false);

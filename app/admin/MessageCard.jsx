@@ -10,7 +10,7 @@ const MessageCard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/contact")
+      .get("https://alfnn-backend.vercel.app/api/contact")
       .then((res) => {
         setMessages(res.data);
       })

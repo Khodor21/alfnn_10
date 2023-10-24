@@ -19,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/contact", {
+      await axios.post("https://alfnn-backend.vercel.app/api/contact", {
         name,
         number,
         message,
@@ -35,7 +35,6 @@ const Contact = () => {
       toast.error("حدث خطأ أثناء تقديم الرسالة. يرجى المحاولة مرة أخرى.");
     }
   };
-  //https://api.whatsapp.com/message/BFP3GRIKS2CNB1?autoload=1&app_absent=0
   return (
     <div className="bg-second" id="contact">
       <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-6 mx-8">
