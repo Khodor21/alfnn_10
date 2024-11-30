@@ -16,7 +16,12 @@ const Hero = () => {
     visible: { opacity: 1, x: 0 },
   };
   return (
-    <div className="bg-second h-[550px] md:h-full">
+    <div
+      className="h-[550px] md:h-full"
+      style={{
+        background: "radial-gradient(circle at 50%, #FED466 0%, #FEB800 85%)",
+      }}
+    >
       {" "}
       <Image src={Planet} alt="planet" className="absolute w-[15%] planet" />
       <Image

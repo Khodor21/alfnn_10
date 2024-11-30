@@ -14,10 +14,11 @@ const Navbar = () => {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
   };
+
   const [showNav, setShowNav] = useState(false);
 
   const handleNav = () => {
-    setShowNav(!showNav);
+    setShowNav((prev) => !prev);
   };
 
   return (
@@ -29,29 +30,19 @@ const Navbar = () => {
           variants={topDataVariants}
           transition={{ duration: 1.2 }}
         >
-          {" "}
           <div className="flex justify-between items-center pb-6">
             <div>
               <button className="bg-white rounded-xl shadow-xl text-second lg:flex hidden">
-                <Link href="tel:++966533762862">
-                  <h5 className={`my-2 mx-4 flex gap-2`} id="englishBold">
+                <Link href="tel:+966533762862">
+                  <h5 className="my-2 mx-4 flex gap-2" id="englishBold">
                     <BsTelephoneInbound />
                     +966-533762862
                   </h5>
                 </Link>
               </button>
+              {/* Hamburger Menu for Smaller Screens */}
               <button className="lg:hidden" onClick={handleNav}>
-                {showNav ? (
-                  <div className="flex flex-col">
-                    <div className="navbar-container">
-                      <NavSide onCloseNav={handleNav} />
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <HiOutlineMenuAlt3 className="text-3xl text-white" />
-                  </div>
-                )}
+                <HiOutlineMenuAlt3 className="text-3xl text-white" />
               </button>
             </div>
             <div id="arabic" className="text-white">
@@ -60,10 +51,10 @@ const Navbar = () => {
                   الرئيسية
                 </Link>
                 <Link href="#services" className="hover:text-main">
-                  خدماتي{" "}
-                </Link>{" "}
+                  خدماتي
+                </Link>
                 <Link href="#works" className="hover:text-main">
-                  أعمالي{" "}
+                  أعمالي
                 </Link>
                 <Link href="#contact" className="hover:text-main">
                   تواصل معي
@@ -74,11 +65,14 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex pl-4">
-              <Image src={MainLogo} className="w-16  mr-2" alt="فن فضائي" />
+              <Image src={MainLogo} className="w-16 mr-2" alt="فن فضائي" />
             </div>
           </div>
         </motion.div>
       </nav>
+
+      {/* Sidebar Component */}
+      <NavSide isOpen={showNav} onCloseNav={handleNav} />
     </div>
   );
 };

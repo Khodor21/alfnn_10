@@ -58,25 +58,35 @@ const MessageCard = () => {
   };
 
   return (
-    <div className="">
+    <div className="pb-8">
       <div className="text-center mt-4 mb-8">
-        <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+        <div className="inline-block align-middle w-[15%] md:w-1/4 border-b border-third"></div>
         <h1 className="inline-block px-2 text-xl text-third" id="topic">
           رســـائــل مــن المـوقــع
         </h1>
-        <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+        <div className="inline-block align-middle w-[15%] md:w-1/4 border-b border-third"></div>
       </div>
       <Slider {...settings}>
         {messages &&
           messages.map((message, index) => (
             <div
               key={index}
-              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8"
+              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 pb-8"
             >
-              <div className="bg-white text-third rounded p-4 hover:shadow-lg flex flex-col justify-center items-center">
-                <h3 className="text-xl font-semibold">{message.name}</h3>
-                <p className="text-gray-600 mb-4">{message.number}</p>
-                <p className="text-second">{message.message}</p>
+              <div className="bg-white w-full text-third rounded p-4 hover:shadow-lg flex flex-col justify-center items-center">
+                <div className="flex justify-end w-full">
+                  <div className="w-[70%] border-b-2 rounded mb-2 mr-4 border-red"></div>
+                  <h3 className="text-xl" id="arabicBold">
+                    {message.name}
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 mb-2" id="english">
+                  {message.number}
+                </p>
+                <p className="text-second" id="arabic">
+                  {message.message}
+                </p>
               </div>
             </div>
           ))}

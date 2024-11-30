@@ -43,7 +43,6 @@ const Blog = () => {
         "https://alfnn-backend.vercel.app/api/blog"
       );
       setPosts(response.data);
-      console.log(response.data);
       setIsLoading(false);
     } catch (error) {
       console.log("Error fetching posts:", error);
@@ -51,7 +50,7 @@ const Blog = () => {
     }
   };
   return (
-    <div className="bg-third">
+    <div className="bg-third pb-4">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -73,11 +72,17 @@ const Blog = () => {
         {" "}
         {posts.map((blog, idx) => (
           <div key={idx}>
-            {" "}
+            <div className="mt-10 px-4 flex justify-end">
+              {" "}
+              <div className="w-[60%] border-b-2 rounded mb-2 mr-4 border-white"></div>
+              <h1 className=" text-white text-2xl" id="topic">
+                الشرح الأوّل
+              </h1>
+            </div>
             <div className="flex flex-col items-center justify-center gap-2 text-center pt-6 pb-2">
               <Link href={blog.link}>
                 <p
-                  className="mb-4 mx-2 text-white text-xl bg-second"
+                  className="mb-4 mx-2 py-1 text-white text-lg bg-second"
                   id="topic"
                 >
                   {blog.title}
@@ -101,7 +106,7 @@ const Blog = () => {
                 <MdOutlineDateRange className=" ml-2 text-[25px] font-extrabold" />
               </div>
             </div>{" "}
-            <hr className="w-[75%] text-white mx-auto" />
+            <hr className="w-[75%] text-white mx-auto my-1" />
           </div>
         ))}
       </div>

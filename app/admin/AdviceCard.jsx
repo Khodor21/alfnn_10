@@ -12,6 +12,7 @@ function Blog() {
   const [uploadError, setUploadError] = useState("");
   const [datePublished, setDatePublished] = useState("");
   const [link, setLink] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -31,7 +32,7 @@ function Blog() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     if (!filePath) {
       setUploadError("Please select an image file.");
       return;
@@ -50,7 +51,7 @@ function Blog() {
         formData
       );
       toast.success("شكرااا لك ! رسالتك صارت عندي");
-
+      setLoading(false);
       setTitle("");
       setIntroduction("");
       setLink("");
@@ -58,12 +59,13 @@ function Blog() {
       setUploadError("");
     } catch (error) {
       console.log("Error uploading post:", error);
+      setLoading(false);
     }
   };
 
   return (
     <>
-      <div className="py-8 w-full" id="arabic">
+      <div className="py-8 w-full">
         <form
           onSubmit={handleSubmit}
           className=" p-4 rounded-lg bg-main mx-4 md:mx-10"
@@ -74,7 +76,7 @@ function Blog() {
           <h1 className="text-white text-center mb-4 text-xl" id="topic">
             نشر البوســت
           </h1>
-          <div className="grid grid-cols-1">
+          <div className="grid grid-cols-1" id="arabicBold">
             <div className="mb-4 text-right ">
               <label htmlFor="title" className="text-gray-700 m-2 text-white">
                 العنوان
@@ -87,7 +89,7 @@ function Blog() {
               />
             </div>
           </div>
-          <div className="mb-4 text-right">
+          <div className="mb-4 text-right" id="arabicBold">
             <label htmlFor="introduction" className="text-white">
               شرح يسير
             </label>
@@ -97,7 +99,7 @@ function Blog() {
               className="w-full mt-2 p-2  rounded"
             />
           </div>
-          <div className="mb-4 text-right">
+          <div className="mb-4 text-right" id="arabicBold">
             <label htmlFor="link" className="text-white">
               لينك البوست
             </label>
@@ -107,13 +109,9 @@ function Blog() {
               className="w-full mt-2 p-2  rounded"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4" id="english">
+          <div className="grid grid-cols-2 gap-4" id="arabicBold">
             <div className="mb-4 text-right ">
-              <label
-                htmlFor="image"
-                className="text-gray-700 text-white"
-                id="arabic"
-              >
+              <label htmlFor="image" className="text-gray-700 text-white">
                 الصورة
               </label>
               <input
@@ -123,11 +121,10 @@ function Blog() {
                 className="w-full mt-2 p-2   rounded bg-white placeholder:text-black"
               />
             </div>
-            <div className="mb-4 text-right " id="english">
+            <div className="mb-4 text-right ">
               <label
                 htmlFor="datePublished"
                 className="text-gray-700 text-white"
-                id="arabic"
               >
                 تاريخ النشر
               </label>
@@ -140,12 +137,13 @@ function Blog() {
               />
             </div>
           </div>
-          <div className="text-center">
+          <div className="text-center" id="arabicBold">
             <button
+              dir="rtl"
               type="submit"
               className="text-main bg-white py-2 px-4 rounded w-[50%]"
             >
-              <h1> تأكيد</h1>
+              <p> {loading ? "جاري النشر..." : "نشـــر"}</p>
             </button>
           </div>
           <ToastContainer />

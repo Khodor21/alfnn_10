@@ -15,8 +15,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Works = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const videoRef = useRef(null);
+
+  const isTitleInView = useInView(titleRef, { once: true });
+  const isSubtitleInView = useInView(subtitleRef, { once: true });
+  const isVideoInView = useInView(videoRef, { once: true });
 
   const settings = {
     dots: true,
@@ -38,21 +43,18 @@ const Works = () => {
     visible: { opacity: 1, x: 0 },
   };
 
-  const firstSlideVariants = {
+  const slideVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-  };
-  const secondSlideVariants = {
-    hidden: { opacity: 0, x: 20 },
     visible: { opacity: 1, x: 0 },
   };
 
   return (
     <div id="works" className="py-8 bg-second">
+      {/* Title Section */}
       <motion.div
-        ref={ref}
+        ref={titleRef}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={isTitleInView ? "visible" : "hidden"}
         variants={titleVariants}
         transition={{ duration: 1 }}
       >
@@ -69,10 +71,12 @@ const Works = () => {
           </div>
         </div>
       </motion.div>
+
+      {/* Subtitle Section */}
       <motion.div
-        ref={ref}
+        ref={subtitleRef}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={isSubtitleInView ? "visible" : "hidden"}
         variants={titleVariants}
         transition={{ duration: 1 }}
       >
@@ -85,90 +89,79 @@ const Works = () => {
         </div>
       </motion.div>
 
+      {/* Image Slider Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center my-8">
-        <div className="">
+        <div>
           <Slider {...settings}>
             {images.map((image, index) => (
               <motion.div
                 key={index}
-                variants={firstSlideVariants}
+                variants={slideVariants}
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                ref={ref}
+                animate={isSubtitleInView ? "visible" : "hidden"}
+                ref={subtitleRef}
               >
                 <Image
                   src={image}
                   alt="first service"
                   className="mx-auto rounded-xl border-2"
-                  style={{ width: "300px", height: "auto" }} // Set a fixed width
+                  style={{ width: "300px", height: "auto" }}
                 />
               </motion.div>
             ))}
           </Slider>
         </div>
-        <div className="">
+        <div>
           <Slider {...settings}>
             {images2.map((image, index) => (
               <motion.div
                 key={index}
-                variants={secondSlideVariants}
+                variants={slideVariants}
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                ref={ref}
+                animate={isSubtitleInView ? "visible" : "hidden"}
+                ref={subtitleRef}
               >
                 <Image
                   src={image}
-                  alt="first service"
+                  alt="second service"
                   className="mx-auto rounded-xl border-2"
-                  style={{ width: "300px", height: "auto" }} // Set a fixed width
+                  style={{ width: "300px", height: "auto" }}
                 />
               </motion.div>
             ))}
           </Slider>
         </div>
       </div>
+
+      {/* Video Section */}
       <motion.div
-        ref={ref}
+        ref={videoRef}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        variants={titleVariants}
+        animate={isVideoInView ? "visible" : "hidden"}
+        variants={slideVariants}
         transition={{ duration: 1 }}
       >
-        <div className="text-center mt-4 mb-8">
-          <div className="inline-block align-middle w-1/4 border-b border-third"></div>
-          <h1 className="inline-block px-2 text-xl text-third" id="topic">
-            مونتــاج ودعــواتـ
-          </h1>
-          <div className="inline-block align-middle w-1/4 border-b border-third"></div>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mx-8 h-full">
+          <motion.video
+            autoPlay
+            loop
+            controls
+            src={require("./assets/serviceVideo.mp4")}
+            style={{ width: "300px", height: "auto" }}
+            muted
+            className="mx-8 rounded-lg"
+          />
+          <motion.video
+            autoPlay
+            loop
+            controls
+            src={require("./assets/serviceVideo1.mp4")}
+            style={{ width: "300px", height: "auto" }}
+            muted
+            className="mx-8 rounded-lg"
+          />
         </div>
       </motion.div>
-
-      <div className="flex flex-col md:flex-row justify-between items-center gap-8 mx-8 h-full">
-        <motion.video
-          autoPlay
-          loop
-          controls
-          src={require("./assets/serviceVideo.mp4")}
-          style={{ width: "300px", height: "auto" }} // Set a fixed width
-          muted
-          className="mx-8 rounded-lg"
-          variants={secondSlideVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        />
-        <motion.video
-          autoPlay
-          loop
-          controls
-          src={require("./assets/serviceVideo1.mp4")}
-          style={{ width: "300px", height: "auto" }} // Set a fixed width
-          muted
-          className="mx-8 rounded-lg"
-          variants={firstSlideVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        />
-      </div>
     </div>
   );
 };
